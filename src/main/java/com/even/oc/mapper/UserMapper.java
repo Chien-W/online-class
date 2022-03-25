@@ -2,9 +2,7 @@ package com.even.oc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.even.oc.entity.User;
-import org.apache.ibatis.annotations.*;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,8 +14,9 @@ import java.util.List;
  * @Email : 1244843022@qq.com
  * @Description :
  */
-//@Mapper
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
+    User findUser(String id);
 
 //    @Select("select * from sys_user")
 //    List<User> findAll();

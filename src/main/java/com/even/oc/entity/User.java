@@ -1,12 +1,15 @@
 package com.even.oc.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.sql.Date;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,16 +24,29 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName(value = "sys_user")
+@TableName(value = "users")
+@ToString
 public class User {
-    @TableId(type = IdType.AUTO)
-    private Integer id;
-    private String username;
-    @JsonIgnore
-    private String password;
-    private String nickname;
+    @TableId
+    private String userId;
     private String email;
-    private String phone;
-    private String address;
+    private Integer submit;
+    private Integer solved;
+    private String defunct;
+    private String ip;
+    private Date accesstime;
+    private Integer volume;
+    private Integer language;
+    private String password;
+    private Date regTime;
+    private String nick;
+    private String school;
+    private String classId;
+    private String college;
+    private String name;
+    private String contact;
+    private String number;
+    private Integer sex;
+    private String major;
 //@TableField(value="")指定表的字段名，驼峰已经自动装
 }

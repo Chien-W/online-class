@@ -17,21 +17,7 @@ import org.springframework.stereotype.Service;
  * @Email : 1244843022@qq.com
  * @Description :
  */
-@Service
-public class UserService extends ServiceImpl<UserMapper,User> {
-    public Boolean saveUser(User user) {
-        return saveOrUpdate(user);//mybatis-plus提供的方法
-    }
-//    @Autowired
-//    private UserMapper userMapper;
-//
-//    public Integer save(User user){
-//        if (user.getId() == null){
-//            return userMapper.insert(user);
-//        }else{
-//             return userMapper.update(user);
-//        }
-//    }
-
-
+public interface UserService{
+    User findUser(String id);
+    User login(User user);
 }
